@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nikhil ❤️</title>
+
+  <style>
+    body {
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      color: #8b0000;
+      font-size: 42px;
+    }
+
+    p {
+      font-size: 22px;
+    }
+
+    button {
+      padding: 15px 32px;
+      font-size: 20px;
+      margin: 15px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #yes {
+      background-color: #b30000;
+      color: white;
+    }
+
+    #no {
+      background-color: white;
+      color: #b30000;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>💖 Nikhil 💖</h1>
+  <p>
+    So… Wanna remind you 😌<br><br>
+    Our marriage is basically finalized 💍✨<br>
+    Pending only one formality.
+  </p>
+
+  <p><strong>Will you be my Valentine forever? ❤️</strong></p>
+
+  <button id="yes" onclick="yesClicked()">Yes 💘</button>
+  <button id="no" onmouseover="moveNo()">No 🙄</button>
+
+  <!-- Background music: Sita Kalyana Vaibhogame -->
+  <iframe width="0" height="0"
+    src="https://www.youtube.com/embed/1gF8j0JH3kY?autoplay=1&loop=1&playlist=1gF8j0JH3kY"
+    frameborder="0"
+    allow="autoplay">
+  </iframe>
+
+  <script>
+    let noSize = 1;
+    let noTexts = [
+      "Are you sure? 😐",
+      "Think again 🙂",
+      "Last chance 😏",
+      "Nikhil pls 😭",
+      "Families already agreed 😌",
+      "Okay now you’re just lying"
+    ];
+    let index = 0;
+
+    function yesClicked() {
+      document.body.innerHTML = `
+        <h1>💍 IT’S OFFICIAL 💍</h1>
+        <p>Kalyanam confirmed ✨</p>
+        <p>Can't wait to meet you at mandap soon😌❤️</p>
+        <p> Congratulations for saying yes to beautiful lifetime subscription 💖</p>
+      `;
+    }
+
+    function moveNo() {
+      const noBtn = document.getElementById("no");
+
+      const x = Math.random() * (window.innerWidth - 150);
+      const y = Math.random() * (window.innerHeight - 150);
+
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+
+      noSize -= 0.08;
+      noBtn.style.transform = `scale(${noSize})`;
+
+      noBtn.innerText = noTexts[index % noTexts.length];
+      index++;
+    }
+  </script>
+
+</body>
+</html>
